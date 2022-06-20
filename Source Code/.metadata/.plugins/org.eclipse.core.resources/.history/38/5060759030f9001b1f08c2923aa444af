@@ -1,0 +1,13 @@
+package com.lockedme;
+
+public class LockedMe 
+{
+	static final String PATH = "C:\\Users\\golun\\Desktop\\MyPhaseOneProject\\LockedMeFiles";
+	
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

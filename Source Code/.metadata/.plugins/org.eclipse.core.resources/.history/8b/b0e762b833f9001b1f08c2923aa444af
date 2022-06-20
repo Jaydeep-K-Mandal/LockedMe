@@ -1,0 +1,17 @@
+package com.lockedme;
+
+import java.util.List;
+
+public class LockedMe 
+{
+	static final String FOLDERPATH = "C:\\Users\\golun\\Desktop\\MyPhaseOneProject\\LockedMeFiles";
+	
+	public static void main(String[] args) 
+	{
+		List<String> fileNames = FileManager.getAllFiles(FOLDERPATH);
+		
+		for(String fileName : fileNames)
+			System.out.println(fileName);
+	}
+
+}

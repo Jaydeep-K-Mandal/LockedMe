@@ -1,0 +1,51 @@
+package com.lockedme;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class LockedMe 
+{
+	static final String FOLDERPATH = "C:\\Users\\golun\\Desktop\\MyPhaseOneProject\\LockedMeFiles";
+	
+	public static void main(String[] args) 
+	{
+		//Variable declaration
+		Scanner scan = new Scanner(System.in);
+		String fileName;
+		int linesCount;
+		List<String> content = new ArrayList<String>();
+		
+		//Read file name from user
+		System.out.println("Enter file name: ");
+		fileName = scan.nextLine();
+		
+		//Read number of lines from user
+		System.out.println("Enter number of lines:");
+		linesCount = Integer.parseInt(scan.nextLine());
+		
+		//Read lines from user
+		for(int i = 1; i <= linesCount; i++)
+		{
+			content.add(scan.nextLine());
+		}
+		
+		//save content to file
+		boolean isAdded = FileManager.createAndWriteToFile(FOLDERPATH, fileName, content);
+		
+		if(isAdded)
+			System.out.println("File added successfully");
+		else
+			System.out.println("Some error occured");
+	}
+	
+	public static void getAllFileNames()
+	{
+		List<String> fileNames = FileManager.getAllFiles(FOLDERPATH);
+		
+		for(String fileName : fileNames)
+			System.out.println(fileName);
+	}
+
+}
